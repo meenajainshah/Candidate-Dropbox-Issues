@@ -28,16 +28,15 @@ Think of this as:
 
 ---
 
-### What we are **not** testing
-This system is **not** intended to:
+### What to expect in this phase
 
-- Make hiring or rejection decisions  
-- Replace interviews  
-- Score or rank candidates  
-- Be production-ready or fully comprehensive  
-- Handle edge cases or scale testing  
-
-The scope is intentionally narrow so we can improve **judgment quality**, not automation.
+  -The output is a review aide, meant to help interviewers form better questions and spot gaps.
+  
+  -It is not a final decision or replacement for interviews.
+  
+  -We’re intentionally optimizing for judgment quality over feature completeness.
+  
+  -The scope is intentionally narrow so we can improve **judgment quality**, not automation.
 
 ---
 
