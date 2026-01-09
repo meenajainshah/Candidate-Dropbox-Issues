@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Candidate Review</title>
+</head>
+<body style="margin:0;padding:0;background:#f6f7f9;font-family:Arial,Helvetica,sans-serif;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f6f7f9;padding:24px 0;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="640" cellspacing="0" cellpadding="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.06);">
+          <tr>
+            <td style="padding:20px 24px;border-bottom:1px solid #eef0f2;">
+              <div style="font-size:16px;font-weight:700;color:#111;">Candidate Dropbox — Review</div>
+              <div style="margin-top:6px;font-size:13px;color:#555;">ID: <strong>{{candidate_id}}</strong> • Source: {{source}} • Created: {{created_at}}</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:20px 24px;">
+              <div style="font-size:18px;font-weight:700;color:#111;margin-bottom:8px;">{{candidate_name}}</div>
+              <div style="font-size:14px;color:#333;line-height:1.5;">
+                <div><strong>Overall fit:</strong> {{overall_fit}}</div>
+                <div style="margin-top:6px;"><strong>Recommended next step:</strong> {{recommended_next_step}}</div>
+                <div style="margin-top:6px;"><strong>Tags:</strong> {{tags}}</div>
+                <div style="margin-top:6px;"><strong>Submitted URL:</strong> <a href="{{resume_url}}" style="color:#0b57d0;text-decoration:none;">Open</a></div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:0 24px 20px 24px;">
+              <div style="font-size:14px;font-weight:700;color:#111;margin:10px 0 6px 0;">Summary</div>
+              <div style="font-size:14px;color:#333;line-height:1.55;white-space:pre-wrap;">{{summary}}</div>
+
+              <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;">
+                <div style="flex:1;min-width:280px;">
+                  <div style="font-size:14px;font-weight:700;color:#111;margin:10px 0 6px 0;">Strengths</div>
+                  <div style="font-size:14px;color:#333;line-height:1.55;white-space:pre-wrap;">{{strengths}}</div>
+                </div>
+                <div style="flex:1;min-width:280px;">
+                  <div style="font-size:14px;font-weight:700;color:#111;margin:10px 0 6px 0;">Gaps</div>
+                  <div style="font-size:14px;color:#333;line-height:1.55;white-space:pre-wrap;">{{gaps}}</div>
+                </div>
+              </div>
+
+              <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;">
+                <div style="flex:1;min-width:280px;">
+                  <div style="font-size:14px;font-weight:700;color:#111;margin:10px 0 6px 0;">Red flags</div>
+                  <div style="font-size:14px;color:#333;line-height:1.55;white-space:pre-wrap;">{{red_flags}}</div>
+                </div>
+                <div style="flex:1;min-width:280px;">
+                  <div style="font-size:14px;font-weight:700;color:#111;margin:10px 0 6px 0;">Questions</div>
+                  <div style="font-size:14px;color:#333;line-height:1.55;white-space:pre-wrap;">{{questions}}</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:14px 24px;background:#fafbfc;border-top:1px solid #eef0f2;">
+              <div style="font-size:12px;color:#666;line-height:1.5;">
+                This review is generated from the submitted public URL(s) and should be used as an input, not a final decision.
+              </div>
+              <div style="font-size:12px;color:#666;margin-top:6px;">
+                Reporting an issue? Reply with the candidate ID <strong>{{candidate_id}}</strong> and the error details.
+              </div>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "Candidate Dropbox API - Tester Collection",
+    "_postman_id": "00000000-0000-0000-0000-000000000000",
+    "description": "Test /intake for Candidate Dropbox Backend (email delivery via delivery_email).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/health",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Review (Resume PDF)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{API_KEY}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"source\": \"postman-test\",\n  \"resume_url\": \"https://example.com/sample-resume.pdf\",\n  \"delivery_email\": \"receive.review@email.com\",\n  \"candidate\": {\n    \"name\": \"Test User\",\n    \"email\": \"candidate@email.com\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/intake",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "intake"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Ensure BASE_URL does not end with a slash",
+          "const base = pm.environment.get('BASE_URL') || '';",
+          "if (base.endsWith('/')) pm.environment.set('BASE_URL', base.slice(0, -1));"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test('Status code is 200', function () {",
+          "  pm.response.to.have.status(200);",
+          "});",
+          "",
+          "// If response includes candidate_id, surface it in the console",
+          "try {",
+          "  const j = pm.response.json();",
+          "  if (j && j.candidate_id) console.log('candidate_id:', j.candidate_id);",
+          "} catch (e) {}"
+        ]
+      }
+    }
+  ]
+}
