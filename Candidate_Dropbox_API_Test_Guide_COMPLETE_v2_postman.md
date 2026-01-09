@@ -286,7 +286,7 @@ After testing, please confirm:
 Issues and feedback are tracked in a **public issues-only repository**:
 
 ```
-<GITHUB_ISSUES_REPO_URL>/issues
+https://github.com/meenajainshah/Candidate-Dropbox-Issues/issues
 ```
 
 ⚠️ Please do NOT include:
